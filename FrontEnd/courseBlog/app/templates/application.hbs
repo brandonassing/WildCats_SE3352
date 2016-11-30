@@ -1,51 +1,49 @@
 <div class="ui segment container">
     <img class="ui small centered  image" src="/assets/images/wildcats-logo.jpeg">
-  <h1 id="title">WildCats</h1>
+    <h1 id="title">WildCats</h1>
     <div class="ui inverted menu">
         <a class="item">
-            <i class="save icon"></i>
-          {{#link-to 'posts'}}Save{{/link-to}}
-        </a><a class="item">
-            <i class="undo icon"></i>
-          {{#link-to 'posts'}}Undo{{/link-to}}
-        </a><a class="item">
-            <i class="step backward icon"></i>
-          {{#link-to 'posts'}}First{{/link-to}}
-        </a><a class="item">
-            <i class="caret left icon"></i>
-          {{#link-to 'posts'}}Previous Record{{/link-to}}
-        </a><a class="item">
-            <i class="caret right icon"></i>
-          {{#link-to 'posts'}}Next Records{{/link-to}}
-        </a><a class="item">
-            <i class="step forward icon"></i>
-          {{#link-to 'posts'}}Last Record{{/link-to}}
-        </a><a class="item">
-            <i class="list layout icon"></i>
-          {{#link-to 'posts'}}All Records{{/link-to}}
+            <i class="save icon"></i> {{#link-to 'posts'}}Save{{/link-to}}
         </a>
         <a class="item">
-            <i class="search icon"></i>
-            {{#link-to 'contact'}}Find Record{{/link-to}}
+            <i class="undo icon"></i> {{#link-to 'posts'}}Undo{{/link-to}}
         </a>
-            <a class="item">
-            <i class="help icon"></i>
-              {{#link-to 'about'}}Help{{/link-to}}
-            </a>
+        <a class="item">
+            <i class="step backward icon"></i> {{#link-to 'posts'}}First{{/link-to}}
+        </a>
+        <a class="item">
+            <i class="caret left icon"></i> {{#link-to 'posts'}}Previous Record{{/link-to}}
+        </a>
+        <a class="item">
+            <i class="caret right icon"></i> {{#link-to 'posts'}}Next Records{{/link-to}}
+        </a>
+        <a class="item">
+            <i class="step forward icon"></i> {{#link-to 'posts'}}Last Record{{/link-to}}
+        </a>
+        <a class="item">
+            <i class="list layout icon"></i> {{#link-to 'posts'}}All Records{{/link-to}}
+        </a>
+        <a class="item">
+            <i class="search icon"></i> {{#link-to 'contact'}}Find Record{{/link-to}}
+        </a>
+        <a class="item">
+            <i class="help icon"></i> {{#link-to 'about'}}Help{{/link-to}}
+        </a>
     </div>
+</div>
 
 {{outlet}}
 
 
-    <footer>
-        <div class="ui violet inverted grid segment">
-            <div class="thirteen wide column">
-                © Copyright - <i>WildCats</i>
-            </div>
-            <div class="three wide column">
-                <img class="ui right aligned container tiny image" src="/assets/images/UWO Stacked_Rev.png">
-            </div>
+<footer>
+    <div class="ui violet inverted grid segment">
+        <div class="thirteen wide column">
+            © Copyright - <i>WildCats</i>
         </div>
-    </footer>
+        <div class="three wide column">
+            <img class="ui right aligned container tiny image" src="/assets/images/UWO Stacked_Rev.png">
+        </div>
+    </div>
+</footer>
 
 </div>
