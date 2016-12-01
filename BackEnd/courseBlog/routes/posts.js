@@ -7,59 +7,55 @@ var parseJSON = bodyParser.json();
 
 router.route('/')
     .post(parseUrlencoded, parseJSON, function (request, response) {
-        var post = new models.Posts(request.body.post);
-        post.save(function (error) {
+        var record = new models.Records(request.body.record);
+        record.save(function (error) {
             if (error) response.send(error);
-            response.json({post: post});
+            response.json({record: record});
         });
 
 
     })
     .get(parseUrlencoded, parseJSON, function (request, response) {
-            models.Posts.find(function (error, posts) {
+            models.Records.find(function (error, records) {
                 if (error) response.send(error);
-                response.json({post: posts});
+                response.json({record: records});
             });
     });
 
-router.route('/:post_id')
+router.route('/:record_id')
     .get(parseUrlencoded, parseJSON, function (request, response) {
-        models.Posts.findById(request.params.post_id, function (error, post) {
+        models.Records.findById(request.params.record_id, function (error, record) {
             if (error) {
                 response.send({error: error});
             }
             else {
-                response.json({post: post});
+                response.json({record: record});
             }
         });
     })
     .put(parseUrlencoded, parseJSON, function (request, response) {
-        models.Posts.findById(request.params.post_id, function (error, post) {
+        models.Records.findById(request.params.record_id, function (error, record) {
             if (error) {
                 response.send({error: error});
             }
             else {
-                post.title = request.body.post.title;
-                post.body = request.body.post.body;
-                post.save(function (error) {
+                record.studentNo = request.body.record.studentNo;
+                record.firstName = request.body.record.firstName;
+                record.lastName = request.body.record.lastName;
+                record.birthDate = request.body.record.birthDate;
+                record.residency = request.body.record.residency;
+                record.gender = request.body.record.gender;
+                record.save(function (error) {
                     if (error) {
                         response.send({error: error});
                     }
                     else {
-                        response.json({post: post});
+                        response.json({record: record});
                     }
                 });
             }
         });
     })
-    .delete(parseUrlencoded, parseJSON, function (request, response) {
-        models.Posts.findByIdAndRemove(request.params.post_id,
-            function (error, deleted) {
-                if (!error) {
-                    response.json({post: deleted});
-                }
-            }
-        );
-    });
+
 
 module.exports = router;

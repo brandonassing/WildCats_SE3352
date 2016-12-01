@@ -2,7 +2,7 @@
 var express = require('express');
 var logger = require('./logger');
 var app = express();
-var posts = require('./routes/posts');
+var records = require('./routes/posts');
 
 
 app.use(function (request, response, next) {
@@ -14,7 +14,7 @@ app.use(function (request, response, next) {
 app.use(logger);
 //app.use(express.static('public'));
 
-app.use('/posts', posts);
+app.use('/records', records);
 
 app.listen(3700, function () {
     console.log('Listening on port 3700');

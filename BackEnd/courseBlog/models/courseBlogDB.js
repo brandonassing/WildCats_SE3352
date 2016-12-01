@@ -1,18 +1,22 @@
 var mongoose = require('mongoose');
-var postsSchema = mongoose.Schema(
+var recordSchema = mongoose.Schema(
     {
-        title: String,
-        body: String,
+        studentNo: string,
+        firstName: string,
+        lastName: string,
+        birthDate: string,
+        residency: string,
+        gender: string
     }
 );
 
-var Posts = mongoose.model('post', postsSchema);
+var Records = mongoose.model('record', recordSchema);
 
 mongoose.connect('mongodb://localhost/courseBlog');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-    exports.Posts = Posts;
+    exports.Records = Records;
 });
 
 

@@ -14,8 +14,8 @@ Router.map(function() {
     this.route('email');
   });
 
-  this.route('post', {
-    path: 'posts/:post_id'
+  this.route('record', {
+    path: 'records/:record_id'
   });
 });
 
