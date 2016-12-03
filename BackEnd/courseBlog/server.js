@@ -1,4 +1,3 @@
-
 var express = require('express');
 var logger = require('./logger');
 var app = express();
@@ -12,9 +11,9 @@ app.use(function (request, response, next) {
     next();
 });
 app.use(logger);
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
-app.use('/records', records);
+app.use('/posts', records);
 
 app.listen(3700, function () {
     console.log('Listening on port 3700');

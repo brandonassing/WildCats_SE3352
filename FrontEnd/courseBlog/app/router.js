@@ -6,16 +6,19 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
-  this.route('posts', {path:'/'});
+Router.map(function () {
+  this.route('posts', {
+    path: '/'
+  });
   this.route('about');
-  this.route('contact', function() {
+  this.route('contact', function () {
     this.route('phone');
     this.route('email');
   });
 
-  this.route('record', {
-    path: 'records/:record_id'
+  this.route('post', {
+    //////should we change this name to post_id?
+    path: 'posts/:record_id'
   });
 });
 

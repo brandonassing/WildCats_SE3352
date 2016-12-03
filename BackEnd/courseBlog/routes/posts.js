@@ -28,6 +28,7 @@ router.route('/')
         });
     });
 
+//check router.js file in front end
 router.route('/:record_id')
     .get(parseUrlencoded, parseJSON, function (request, response) {
         models.Records.findById(request.params.record_id, function (error, record) {
