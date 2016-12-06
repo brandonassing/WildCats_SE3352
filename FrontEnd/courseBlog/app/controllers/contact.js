@@ -2,25 +2,20 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  recordFound: false,
-  recordNotFound:false,
+  sNumber: null,
   actions: {
-    /*
-     findStudent(){
-     if(this.store.findAll()){
-     this.set('recordFound', true);
-     }
-     else{
-     this.set('recordNotFound',true);
-     }
-
-     var myStore = this.get('store');
-     myStore.findAll();
+    findStudent(){
+      var sNumber = this.get('sNumber');
+      window.alert(sNumber);
+      window.location = "http://localhost:4200/posts/" + sNumber;
+    }
 
 
-     }}*/
-    //
+
 
   }
+
+
+
 });
 

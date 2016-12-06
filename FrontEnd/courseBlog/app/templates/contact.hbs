@@ -9,11 +9,11 @@
         <form class="ui fluid inverted form">
           <div class="field">
             <div class="ui pointing below label">Search Records</div>
-            <br> {{input type="text" value = sNumber placeholder="enter number"}}
+            <br> {{input type="text" valueBinding = "sNumber" placeholder="enter number"}}
           </div>
           <br>
           <div>
-            <button class="ui button" {{action "findStudent" record}}>
+            <button class="ui button" {{action "findStudent" }}>
               Search!
             </button>
           </div>
@@ -22,12 +22,29 @@
     </div>
 
   </div>
+<div>
+  {{number}}
+</div>
+
+
+
+
+
+
+
+
 </div>
 <div class="eight wide column">
 
 
   {{#if recordFound}}
   <div id="outletArea">
+
+
+
+
+
+
     {{record.student}}
 
   </div>
