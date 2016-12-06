@@ -18,7 +18,7 @@ Router.map(function () {
 
   this.route('post', {
     //////should we change this name to post_id?
-    path: 'posts/:record_id'
+    path: 'posts/:post_id'
   });
   this.route('edit-post');
 });

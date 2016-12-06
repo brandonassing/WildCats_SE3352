@@ -17,9 +17,13 @@ export default Ember.Component.extend({
 
       var self = this;
       myStore.findRecord('post',id).then(function(post) {
-        post.set('title',self.get('selectedPost.title'));
-        post.set('body', self.get('selectedPost.body'));
-        post.save();  // => PATCH to /posts/:post_id
+          post.set('studentNo',self.get('selectedPost.studentNo'));
+          post.set('firstName', self.get('selectedPost.firstName'));
+          post.set('lastName', self.get('selectedPost.lastName'));
+          post.set('birthDate', self.get('selectedPost.birthDate'));
+          post.set('residency', self.get('selectedPost.residency'));
+          post.set('gender', self.get('selectedPost.gender'));
+          post.save();  // => PATCH to /posts/:post_id
       });
       this.set('isEditing', false);
       this.get('routing').transitionTo('posts' );

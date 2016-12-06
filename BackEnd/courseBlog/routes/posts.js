@@ -9,61 +9,61 @@ var parseJSON = bodyParser.json();
 
 router.route('/')
     .post(parseUrlencoded, parseJSON, function (request, response) {
-        var record = new models.Records(request.body.record);
-        record.save(function (error) {
+        var post = new models.Posts(request.body.post);
+        post.save(function (error) {
             if (error) response.send(error);
             response.json({
-                record: record
+                post: post
             });
         });
 
 
     })
     .get(parseUrlencoded, parseJSON, function (request, response) {
-        models.Records.find(function (error, records) {
+        models.Posts.find(function (error, records) {
             if (error) response.send(error);
             response.json({
-                record: records
+                post: posts
             });
         });
     });
 
 //check router.js file in front end
-router.route('/:record_id')
+router.route('/:post_id')
     .get(parseUrlencoded, parseJSON, function (request, response) {
-        models.Records.findById(request.params.record_id, function (error, record) {
+        models.Posts.findById(request.params.post_id, function (error, post) {
             if (error) {
                 response.send({
                     error: error
                 });
             } else {
                 response.json({
-                    record: record
+                    post: post
                 });
             }
         });
     })
     .put(parseUrlencoded, parseJSON, function (request, response) {
-        models.Records.findById(request.params.record_id, function (error, record) {
+        models.Posts.findById(request.params.post_id, function (error, post) {
             if (error) {
                 response.send({
                     error: error
                 });
             } else {
-                record.studentNo = request.body.record.studentNo;
-                record.firstName = request.body.record.firstName;
-                record.lastName = request.body.record.lastName;
-                record.birthDate = request.body.record.birthDate;
-                record.residency = request.body.record.residency;
-                record.gender = request.body.record.gender;
-                record.save(function (error) {
+                post.studentNo = request.body.record.studentNo;
+                post.firstName = request.body.record.firstName;
+                post.lastName = request.body.record.lastName;
+                post.birthDate = request.body.record.birthDate;
+                post.residency = request.body.record.residency;
+                post.gender = request.body.record.gender;
+                post.save(function (error) {
                     if (error) {
                         response.send({
                             error: error
                         });
                     } else {
                         response.json({
-                            record: record
+                            post: post
                         });
                     }
                 });
