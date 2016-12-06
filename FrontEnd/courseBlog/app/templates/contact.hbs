@@ -14,7 +14,7 @@
           </div>
           <br>
           <div>
-            <button class="ui button" {{action "findStudent" record}}>
+            <button class="ui button" {{action 'findStudent'}}>
               Search!
             </button>
           </div>
@@ -23,31 +23,32 @@
     </div>
 
   </div>
-</div>
-<div class="eight wide column">
 
+  <div class="eight wide column">
 
-  {{#if recordFound}}
-    <div id="outletArea">
-      {{record.student}}
+    {{#each model as |item|}}
+      {{item.body}}
+    {{/each}}
+    <div id="outlestArea">
+
+      outlets
 
     </div>
+    {{#if recordFound}}
+      <div id="outletArea">
+
+        outlets
+
+      </div>
 
 
-  {{/if}}
+    {{/if}}
 
-  {{#if recordNotFound}}
-    <div>Sorry, that student number is not linked to a current student</div>
-  {{/if}}
+    {{#if recordNotFound}}
+      <div>Sorry, that student number is not linked to a current student</div>
+    {{/if}}
 
-
-  {{outlet}}
+    {{outlet}}
+  </div>
+  <br><br><br>
 </div>
-
-
-
-
-
-<br><br><br>
-
-
