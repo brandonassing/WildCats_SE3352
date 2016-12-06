@@ -1,20 +1,19 @@
-<div class ="ui segment container">
+<div class="ui segment container">
   <h2> Find Records Form </h2>
   <h3> Wildcats! </h3>
 
   <div>
     <div>
 
-      <div class =" ui inverted segment">
-        <form class = "ui fluid inverted form">
-          <div class ="field">
-            <div class = "ui pointing below label">Search Records</div>
-            <br>
-            {{input type="text"  value = sNumber placeholder="enter number"}}
+      <div class=" ui inverted segment">
+        <form class="ui fluid inverted form">
+          <div class="field">
+            <div class="ui pointing below label">Search Records</div>
+            <br> {{input type="text" value = sNumber placeholder="enter number"}}
           </div>
           <br>
           <div>
-            <button class="ui button" {{action 'findStudent'}}>
+            <button class="ui button" {{action "findStudent" record}}>
               Search!
             </button>
           </div>
@@ -23,23 +22,24 @@
     </div>
 
   </div>
-
-  <div class="eight wide column">
-
-    <div id="outlestArea">
-
-    </div>
-    {{#if recordFound}}
-      <div id="outletArea">
-        outlets
-      </div>
-    {{/if}}
-
-    {{#if recordNotFound}}
-      <div>Sorry, that student number is not linked to a current student</div>
-    {{/if}}
-
-    {{outlet}}
-  </div>
-  <br><br><br>
 </div>
+<div class="eight wide column">
+
+
+  {{#if recordFound}}
+  <div id="outletArea">
+    {{record.student}}
+
+  </div>
+
+
+  {{/if}} {{#if recordNotFound}}
+  <div>Sorry, that student number is not linked to a current student</div>
+  {{/if}} {{outlet}}
+</div>
+
+
+
+
+
+<br><br><br>

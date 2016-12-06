@@ -7,30 +7,30 @@ export default Ember.Component.extend({
 
   isEditing: false,
   actions: {
-    edit: function(){
+    edit: function () {
       this.set('isEditing', true);
     },
 
-    save: function(id){
+    save: function (id) {
       this.set('isEditing', false);
       var myStore = this.get('store');
 
       var self = this;
-      myStore.findRecord('post',id).then(function(post) {
-          post.set('studentNo',self.get('selectedPost.studentNo'));
-          post.set('firstName', self.get('selectedPost.firstName'));
-          post.set('lastName', self.get('selectedPost.lastName'));
-          post.set('birthDate', self.get('selectedPost.birthDate'));
-          post.set('residency', self.get('selectedPost.residency'));
-          post.set('gender', self.get('selectedPost.gender'));
-          post.save();  // => PATCH to /posts/:post_id
+      myStore.findRecord('post', id).then(function (post) {
+        post.set('studentNo', self.get('selectedPost.studentNo'));
+        post.set('firstName', self.get('selectedPost.firstName'));
+        post.set('lastName', self.get('selectedPost.lastName'));
+        post.set('birthDate', self.get('selectedPost.birthDate'));
+        post.set('residency', self.get('selectedPost.residency'));
+        post.set('gender', self.get('selectedPost.gender'));
+        post.save(); // => PATCH to /posts/:post_id
       });
       this.set('isEditing', false);
-      this.get('routing').transitionTo('posts' );
+      this.get('routing').transitionTo('posts');
     },
 
-    cancel: function(){
-      this.get('routing').transitionTo('posts' );
+    cancel: function () {
+      this.get('routing').transitionTo('posts');
     }
 
   }
