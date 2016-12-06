@@ -1,14 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-
-  sid: "",
-  fname: "",
-  lname: "",
-  birth: "",
-  residency: 0,
-  gender: 0,
-
+  /*
+    sid: "",
+    fname: "",
+    lname: "",
+    birth: "",
+    residency: 0,
+    gender: 0,
+    */
   store: Ember.inject.service(),
 
   actions: {
@@ -27,7 +27,7 @@ export default Ember.Route.extend({
         studentNo: this.get('studentNo'),
         firstName: this.get('firstName'),
         lastName: this.get('lastName'),
-        birthDate: this.get('birthDate'),
+        birthDate: this.get('birth'),
         residency: this.get('residency'),
         gender: this.get('gender')
       });
