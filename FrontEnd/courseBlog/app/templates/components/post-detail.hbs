@@ -1,26 +1,33 @@
-<h2>{{selectedPost.title}}</h2>
+<h2>{{selectedPost.studentNo}}</h2>
 
 {{#if isEditing}}
 
-  <form class="ui form">
-    <div class="field">
-      <label>Title</label>
-      {{input type="text"  value = selectedPost.title}}
-    </div>
-    <div class="field">
-      <label>Body</label>
-      {{input type="text" value = selectedPost.body }}
-    </div>
-
-    <button class="ui button" {{action 'save' selectedPost.id}}>Save</button>
-  </form>
-{{else}}
-  <div class="ui bulleted list">
-    <div class="item">{{selectedPost.body}} </div>
+<form class="ui form">
+  <div class="field">
+    <label>studentNo</label> {{input type="text" value = selectedPost.studentNo}}
+  </div>
+  <div class="field">
+    <label>firstName</label> {{input type="text" value = selectedPost.firstName}}
+  </div>
+  <div class="field">
+    <label>lastName</label> {{input type="text" value = selectedPost.lastName}}
+  </div>
+  <div class="field">
+    <label>birthDate</label> {{input type="text" value = selectedPost.birthDate}}
+  </div>
+  <div class="field">
+    <label>residency</label> {{input type="text" value = selectedPost.residency}}
+  </div>
+  <div class="field">
+    <label>gender</label> {{input type="text" value = selectedPost.gender}}
   </div>
 
-  <button class="ui button" {{action 'edit'}}> Edit </button>
-  <button class="ui button" {{action 'cancel'}}> Cancel </button>
+  <button class="ui button" {{action 'save' selectedPost.id}}>Save</button>
+</form>
+{{else}}
+<div class="ui bulleted list">
+  <div class="item">{{selectedPost.studentNo}} </div>
+</div>
 
-{{/if}}
-
+<button class="ui button" {{action 'edit'}}> Edit </button>
+<button class="ui button" {{action 'cancel'}}> Cancel </button> {{/if}}

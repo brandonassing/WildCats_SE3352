@@ -8,12 +8,13 @@ export default Ember.Component.extend({
 
   actions: {
     addNewPost() {
-      this.set('sid', null);
-      this.set('fname', null);
-      this.set('lname', true);
-      this.set('birth', true);
-      this.set('residency', true);
-      this.set('gender', true);
+      this.set('studentNo', null);
+      this.set('firstName', null);
+      this.set('lastName', null);
+      this.set('birthDate', null);
+      this.set('residency', null);
+      this.set('gender', null);
+      this.set('isAdding', true);
     },
     savePost() {
       var myStore = this.get('store');

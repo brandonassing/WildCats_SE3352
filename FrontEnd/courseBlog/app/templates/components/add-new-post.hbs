@@ -1,16 +1,51 @@
 {{#if isAdding}}
-<h2>Adding new post</h2>
-<form class="ui form">
-  <div class="field">
-    <label>Post Title</label> {{input type="text" value = title placeholder="add title"}}
-  </div>
-  <div class="field">
-    <label>Post Body</label> {{input type="text" value = body placeholder="add body"}}
-  </div>
+<h2>Record</h2>
+<div>
+  <form class="ui form">
+    <div class="field">
+      <label>studentNo</label> {{input type="text" value = studentNo placeholder="Enter student number"}}
+    </div>
+    <div class="field">
+      <label>firstName</label> {{input type="text" value = firstName placeholder="Enter first name"}}
+    </div>
+    <div class="field">
+      <label>lastName</label> {{input type="text" value = lastName placeholder="Enter last name"}}
+    </div>
+    <div class="field">
+      <label>birthDate</label> {{input type="text" value = birthDate placeholder="Enter date of birth"}}
+    </div>
+    <div class="field">
+      <label>residency</label> {{input type="text" value = residency placeholder="Enter date of birth"}}
+    </div>
+    <div class="field">
+      <label>gender</label> {{input type="text" value = gender placeholder="Enter date of birth"}}
+    </div>
+    {{!-- {{#ui-dropdown}}
+    <div class="ui selection dropdown">
+      {{input type="hidden" name="residency" value = residency}}
+      <i class="dropdown icon"></i>
+      <div class="default text">Residency</div>
+      <div class="menu">
+        <div class="item" data-value="Native">Native</div>
+        <div class="item" data-value="International">International</div>
+      </div>
+    </div>
+    {{/ui-dropdown}} {{#ui-dropdown}}
+    <div class="ui selection dropdown">
+      {{input type="hidden" name="gender" value = gender}}
+      <i class="dropdown icon"></i>
+      <div class="default text">Gender</div>
+      <div class="menu">
+        <div class="item" data-value="Male">Male</div>
+        <div class="item" data-value="Female">Female</div>
+      </div>
+    </div>
+    {{/ui-dropdown}} --}}
 
-  <button class="ui button" {{action 'savePost'}}>Save</button>
-  <button class="ui button" {{action 'cancelPost'}}>Cancel</button>
-</form>
+    <button class="ui button" {{action 'savePost'}}>Save</button>
+    <button class="ui button" {{action 'cancelPost'}}>Cancel</button>
+  </form>
+</div>
 {{else}}
 <button class="ui button" {{action 'addNewPost'}}>
     Add new post
