@@ -13,9 +13,6 @@ export default Ember.Route.extend({
 
   actions: {
 
-
-
-    ///////////////////////////////////////////////////////////
     addNewPost() {
       this.set('sid', null);
       this.set('fname', null);
@@ -26,9 +23,13 @@ export default Ember.Route.extend({
     },
     savePost() {
       var myStore = this.get('store');
-      var newPost = myStore.createRecord('post', {
-        title: this.get('title'),
-        body: this.get('body')
+      var newPost = myStore.createPost('post', {
+          studentNo: this.get('studentNo'),
+          firstName: this.get('firstName'),
+          lastName: this.get('lastName'),
+          birthDate: this.get('birthDate'),
+          residency: this.get('residency'),
+          gender: this.get('gender')
       });
       newPost.save();
       this.set('isAdding', false);
@@ -37,7 +38,6 @@ export default Ember.Route.extend({
     cancelPost() {
       this.set('isAdding', false);
     }
-    ///////////////////////////////////////////////////////////
   }
 
 
