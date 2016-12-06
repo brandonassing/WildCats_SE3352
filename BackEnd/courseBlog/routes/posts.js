@@ -69,6 +69,17 @@ router.route('/:post_id')
                 });
             }
         });
+
+    })
+    .delete(parseUrlencoded, parseJSON, function (request, response) {
+        models.Posts.findByIdAndRemove(request.params.post_id,
+            function (error, deleted) {
+                if (!error) {
+                    response.json({
+                        post: deleted
+                    });
+                }
+            });
     });
 
 

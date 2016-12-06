@@ -27,7 +27,11 @@
 {{else}}
 <div class="ui bulleted list">
   <div class="item">{{selectedPost.studentNo}} </div>
+  <div class="item">{{selectedPost.firstName}} </div>
+  <div class="item">{{selectedPost.lastName}} </div>
+  <div class="item">{{selectedPost.birthDate}} </div>
+  <div class="item">{{selectedPost.residency}} </div>
+  <div class="item">{{selectedPost.gender}} </div>
 </div>
-
 <button class="ui button" {{action 'edit'}}> Edit </button>
 <button class="ui button" {{action 'cancel'}}> Cancel </button> {{/if}}
