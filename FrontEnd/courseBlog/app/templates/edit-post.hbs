@@ -3,19 +3,20 @@
 <div>
     <form class="ui form">
         <div class="field">
-            <label>Student ID</label> {{input type="text" value = title placeholder="Enter student number"}}
+            <label>Student ID</label> {{input type="text" value = sid placeholder="Enter student number"}}
         </div>
         <div class="field">
-            <label>First Name</label> {{input type="text" value = body placeholder="Enter first name"}}
+            <label>First Name</label> {{input type="text" value = fname placeholder="Enter first name"}}
         </div>
         <div class="field">
-            <label>Last Name</label> {{input type="text" value = body placeholder="Enter last name"}}
+            <label>Last Name</label> {{input type="text" value = lname placeholder="Enter last name"}}
         </div>
         <div class="field">
-            <label>Birth Date</label> {{input type="text" value = body placeholder="Enter date of birth"}}
+            <label>Birth Date</label> {{input type="text" value = birth placeholder="Enter date of birth"}}
         </div>
+        {{#ui-dropdown}}
         <div class="ui selection dropdown">
-            <input type="hidden" name="gender">
+            {{input type="hidden" name="residency" value = residency}}
             <i class="dropdown icon"></i>
             <div class="default text">Residency</div>
             <div class="menu">
@@ -23,8 +24,9 @@
                 <div class="item" data-value="0">International</div>
             </div>
         </div>
+        {{/ui-dropdown}} {{#ui-dropdown}}
         <div class="ui selection dropdown">
-            <input type="hidden" name="gender">
+            {{input type="hidden" name="gender" value = gender}}
             <i class="dropdown icon"></i>
             <div class="default text">Gender</div>
             <div class="menu">
@@ -32,5 +34,6 @@
                 <div class="item" data-value="0">Female</div>
             </div>
         </div>
+        {{/ui-dropdown}}
     </form>
 </div>

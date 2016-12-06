@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  studentNum: "",
+  sid: "",
   fname: "",
   lname: "",
   birth: "",
@@ -17,9 +17,12 @@ export default Ember.Route.extend({
 
     ///////////////////////////////////////////////////////////
     addNewPost() {
-      this.set('title', null);
-      this.set('body', null);
-      this.set('isAdding', true);
+      this.set('sid', null);
+      this.set('fname', null);
+      this.set('lname', true);
+      this.set('birth', true);
+      this.set('residency', true);
+      this.set('gender', true);
     },
     savePost() {
       var myStore = this.get('store');
