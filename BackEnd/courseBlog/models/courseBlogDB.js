@@ -3,9 +3,9 @@ var recordSchema = mongoose.Schema({
     studentNo: String,
     firstName: String,
     lastName: String,
+    gender: String,
     birthDate: String,
     residency: String,
-    gender: String
 });
 
 var Records = mongoose.model('record', recordSchema);

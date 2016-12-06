@@ -1,7 +1,11 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  title: DS.attr(),
-  body: DS.attr()
+    studentNo: DS.attr(),
+    firstName: DS.attr(),
+    lastName: DS.attr(),
+    gender: DS.attr(),
+    birthDate: DS.attr(),
+    residency: DS.attr(),
 
 });
