@@ -20,7 +20,7 @@
     <div class="field">
       <label>gender</label> {{input type="text" value = gender placeholder="Enter date of birth"}}
     </div>
-    {{!-- {{#ui-dropdown}}
+    <select class="ui-dropdown">
     <div class="ui selection dropdown">
       {{input type="hidden" name="residency" value = residency}}
       <i class="dropdown icon"></i>
@@ -30,7 +30,8 @@
         <div class="item" data-value="International">International</div>
       </div>
     </div>
-    {{/ui-dropdown}} {{#ui-dropdown}}
+    </select>
+    <select class="ui-dropdown">
     <div class="ui selection dropdown">
       {{input type="hidden" name="gender" value = gender}}
       <i class="dropdown icon"></i>
@@ -40,7 +41,7 @@
         <div class="item" data-value="Female">Female</div>
       </div>
     </div>
-    {{/ui-dropdown}} --}}
+    </select>>
 
     <button class="ui button" {{action 'savePost'}}>Save</button>
     <button class="ui button" {{action 'cancelPost'}}>Cancel</button>
