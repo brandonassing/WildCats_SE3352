@@ -20,6 +20,7 @@ Router.map(function () {
     //////should we change this name to post_id?
     path: 'posts/:record_id'
   });
+  this.route('edit-post');
 });
 
 export default Router;
