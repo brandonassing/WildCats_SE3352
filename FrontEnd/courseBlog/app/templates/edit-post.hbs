@@ -1,6 +1,7 @@
 {{outlet}}
 <h2>Record</h2>
 <div>
+  <div class = "ui grid">
     <form class="ui form">
         <div class="field">
             <label>Student ID</label> {{input type="text" value = sid placeholder="Enter student number"}}
@@ -37,4 +38,5 @@
         {{/ui-dropdown}}
         <button class="ui button" {{action 'savePost'}}>Save</button>
     </form>
+</div>
 </div>
