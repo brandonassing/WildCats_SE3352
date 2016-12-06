@@ -20,7 +20,7 @@ router.route('/')
 
     })
     .get(parseUrlencoded, parseJSON, function (request, response) {
-        models.Posts.find(function (error, records) {
+        models.Posts.find(function (error, posts) {
             if (error) response.send(error);
             response.json({
                 post: posts
@@ -50,12 +50,12 @@ router.route('/:post_id')
                     error: error
                 });
             } else {
-                post.studentNo = request.body.record.studentNo;
-                post.firstName = request.body.record.firstName;
-                post.lastName = request.body.record.lastName;
-                post.birthDate = request.body.record.birthDate;
-                post.residency = request.body.record.residency;
-                post.gender = request.body.record.gender;
+                post.studentNo = request.body.post.studentNo;
+                post.firstName = request.body.post.firstName;
+                post.lastName = request.body.post.lastName;
+                post.birthDate = request.body.post.birthDate;
+                post.residency = request.body.post.residency;
+                post.gender = request.body.post.gender;
                 post.save(function (error) {
                     if (error) {
                         response.send({

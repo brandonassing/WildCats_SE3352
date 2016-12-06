@@ -7,26 +7,22 @@ export default Ember.Component.extend({
   store: Ember.inject.service(),
 
   actions: {
-    addNewPost (){
+    addNewPost() {
       this.set('title', null);
       this.set('body', null);
       this.set('isAdding', true);
     },
-    savePost (){
+    savePost() {
       var myStore = this.get('store');
-      var newPost = myStore.createPost('post',{
-          studentNo: this.get('studentNo'),
-          firstName: this.get('firstName'),
-          lastName: this.get('lastName'),
-          birthDate: this.get('birthDate'),
-          residency: this.get('residency'),
-          gender: this.get('gender')
+      var newPost = myStore.createRecord('post', {
+        title: this.get('title'),
+        body: this.get('body')
       });
       newPost.save();
       this.set('isAdding', false);
     },
 
-    cancelPost (){
+    cancelPost() {
       this.set('isAdding', false);
     }
   }
