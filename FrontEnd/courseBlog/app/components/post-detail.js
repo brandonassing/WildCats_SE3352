@@ -20,7 +20,6 @@ export default Ember.Component.extend({
 
       var self = this;
       myStore.findRecord('post', id).then(function (post) {
-        post.set('studentNo', self.get('selectedPost.studentNo'));
         post.set('firstName', self.get('selectedPost.firstName'));
         post.set('lastName', self.get('selectedPost.lastName'));
         post.set('birthDate', self.get('selectedPost.birthDate'));
@@ -30,6 +29,9 @@ export default Ember.Component.extend({
       });
       this.set('isEditing', false);
       this.get('routing').transitionTo('posts');
+    },
+    undo:function(){
+      
     },
 
     cancel: function () {
