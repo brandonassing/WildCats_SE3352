@@ -5,6 +5,10 @@ export default Ember.Component.extend({
   store: Ember.inject.service(),
   routing: Ember.inject.service('-routing'),
   isEditing: false,
+  isMale: function() {
+  return this.get('selectedPost.gender') === 'Male';
+}.property('selectedPost.gender'),
+
   actions: {
     edit: function () {
       this.set('isEditing', true);
