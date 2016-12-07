@@ -22,7 +22,7 @@ export default Ember.Component.extend({
         studentNo: this.get('studentNo'),
         firstName: this.get('firstName'),
         lastName: this.get('lastName'),
-        birthDate: this.get('birth'),
+        birthDate: this.get('birthDate'),
         residency: this.get('residency'),
         gender: this.get('gender')
       });
