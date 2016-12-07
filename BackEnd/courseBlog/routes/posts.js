@@ -44,7 +44,7 @@ router.route('/:studentNo')
         });
     })
     .put(parseUrlencoded, parseJSON, function (request, response) {
-        models.Posts.findById(request.params.post_id, function (error, post) {
+        models.Posts.findOne({studentNo: request.body.post.studentNo}, function (error, post) {
             if (error) {
                 response.send({
                     error: error

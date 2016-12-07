@@ -19,19 +19,6 @@
   <div class="field">
     <label>gender</label> {{input type="text" value = selectedPost.gender}}
   </div>
-    <label><b>residency</b></label>
-  <select>
-      <option value = "Residency">Residency</option>
-      <option value = "Permanent" onclick = "selectedPost.residency = 'Permanent';">Permanent</option>
-      <option value = "Native" onclick = "selectedPost.residency = 'Native';">Native</option>
-      <option value = "International" onclick = "selectedPost.residency = 'International';">International</option>
-  </select>
-        <label><b>gender</b></label>
-  <select>
-      <option value = "Gender">Gender</option>
-      <option value = "Male" onclick = "selectedPost.gender = 'Male';">Male</option>
-      <option value = "Female" onclick = "selectedPost.gender = 'Female';">Female</option>
-  </select>
-  {{show-logo}}
   <button class="ui button" {{action 'save' selectedPost.id}}>Save</button>
 </form>
+{{show-logo}}

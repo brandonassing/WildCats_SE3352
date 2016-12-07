@@ -4,7 +4,6 @@ export default Ember.Component.extend({
 
   store: Ember.inject.service(),
   routing: Ember.inject.service('-routing'),
-
   isEditing: false,
   actions: {
     edit: function () {
@@ -32,7 +31,7 @@ export default Ember.Component.extend({
     cancel: function () {
       this.get('routing').transitionTo('posts');
     }
-
+   
   }
 
 });

@@ -1,15 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
-  logoIsShowing: false,
-  actions: {
-    showLogo (){
-      this.set('logoIsShowing', true);
-    },
-    hideLogo(){
-      this.set('logoIsShowing', false);
+    store: Ember.inject.service(),
+    genderChoice: false,
+    checkGender: function (id) {
+      var myStore = this.get('store');
+      var self = this;
+      myStore.findRecord('post', id).then(function() {
+        var gender = self.get('selectedPost.gender');
+        if (gender === "Male")
+        {
+            this.set('genderChoice', true);
+        }
+        else
+        {
+            this.set('genderChoice', false);
+        }
+      });
     }
-  }
-
 });
